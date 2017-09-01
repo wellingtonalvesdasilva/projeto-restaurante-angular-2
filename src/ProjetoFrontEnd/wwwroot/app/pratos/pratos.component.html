@@ -1,0 +1,50 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend>Cadastro de Pratos</legend>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <a class="btn btn-default-btn-xs btn-success" (click)="add()">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                Cadastrar novo prato
+                            </a>
+                        </div>
+                    </div>
+                    <div class="error" *ngIf="error">{{error}}</div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>-</th>
+                    <th>-</th>
+                    <th>Restaurante</th>
+                    <th>Prato</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prato of pratos">
+                    <th>
+                        <button type="button" class="btn btn-danger" (click)="remove(prato, $event)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-info" (click)="edit(prato)">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </th>
+                    <th>{{prato.restaurante.nome}}</th>
+                    <th>{{prato.nome}}</th>
+                    <th>{{prato.preco}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

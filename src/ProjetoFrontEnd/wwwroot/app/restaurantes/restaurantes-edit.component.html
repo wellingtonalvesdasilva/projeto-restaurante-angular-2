@@ -1,0 +1,32 @@
+﻿
+<div class="container" *ngIf="restaurante">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend>Cadastro de Restaurante</legend>
+                    <div class="form-group col-md-12">
+                        <label class="col-md-3 control-label">Nome do Restaurante</label>
+                        <div class="col-md-8">
+                            <input #ctrl="ngModel" [(ngModel)]="restaurante.nome" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="btn-save"></label>
+                        <div class="col-md-4">
+                            <a class="btn btn-default-btn-xs btn-danger" (click)="goBack()">
+                                <i class="glyphicon glyphicon-arrow-left"></i>
+                                Cancelar
+                            </a>
+                            <a class="btn btn-default-btn-xs btn-success" (click)="save()">
+                                <i class="glyphicon glyphicon-floppy-save"></i>
+                                Salvar
+                            </a>
+                        </div>
+                    </div>
+                    <div class="error" *ngIf="error">{{error}}</div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
